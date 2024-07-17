@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Css Js Page</title>
+    <link rel="stylesheet" th:href="@{/css/mycss.css}">
+
+</head>
+<body>
+
+    <div th:replace="~{common/header :: header}">
+
+    </div>
+
+    <div>
+        <button id="btnShow">Show</button>
+    </div>
+
+    <div th:replace="~{common/footer :: footer}">
+
+    </div>
+
+    <script th:src="@{/js/script.js}" defer></script>
+</body>
+</html>
