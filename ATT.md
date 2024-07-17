@@ -26,3 +26,31 @@ __Syntax:__ ~{fragment name}
 3. __th:include__ : this is deprecated
 
 
+### Link Expressions
+```html
+<p>
+    <a th:href="@{/link-expression/{id}(id=${id})}">Link with parameter</a>
+</p>
+```
+
+### Link expressions && iteractions
+```html
+ <tbody>
+    <tr th:each="user, userStat : ${users}">
+        <td th:text="${userStat.count}"></td>
+        <td th:text="${userStat.index}"></td>
+        <td th:text="${userStat.even}"></td>
+        <td th:text="${userStat.odd}"></td>
+        <td th:text="${userStat.first}"></td>
+        <td th:text="${userStat.last}"></td>
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.role}"></td>
+        <td th:text="${user.gender}"></td>
+        <td><a type="button" th:href="@{/update/{id}(id=${user.id})}">Update</a></td>
+        <td><a type="button" th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td>
+        <td><a type="button" th:href="@{/save}">Save</a></td>
+    </tr>
+</tbody>
+```
